@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Literata:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lulo+Clean:wght@400&display=swap'); /* Add Lulo Clean font */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #424240; /* Change background color */
+  font-family: 'Literata', serif;
+  color: #FDFFE6; /* Change text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  /* Remove transition */
+}
+
+body.intro {
+  background-color: #424240;
+}
+
+.texte-container {
+  width: 75vw;
+  height: 75vh;
+  background-color: transparent;
+  font-size: 2vw;
+  text-align: justify;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  color: #FDFFE6; /* Change text color */
+}
+
+.chapter-container {
+  text-align: center;
+  animation: fadeOut 2s 3s forwards;
+  background-color: #424240;
+}
+
+.chapter-title {
+  font-size: 4em;
+  color: #FDFFE6; /* Change text color */
+  opacity: 0;
+  animation: fadeInUp 2s forwards;
+  margin-bottom: 0.2em;
+  font-family: 'Lulo Clean', sans-serif; /* Ensure Lulo Clean font */
+}
+
+.chapter-subtitle {
+  font-size: 2em;
+  color: #FDFFE6; /* Change text color */
+  opacity: 0;
+  animation: fadeInUp 2s forwards 1s;
+  margin-top: 0;
+  font-family: 'Literata', serif; /* Ensure Literata Regular */
+}
+
+.click-to-start {
+  text-align: center;
+  color: #FDFFE6; /* Change text color */
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.main-title {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  color: #FDFFE6; /* Change text color */
+}
+
+.subtitle {
+  font-size: 1em;
+  margin-bottom: 2em;
+  color: #FDFFE6; /* Change text color */
+}
+
+.volume-control {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+}
+
+.volume-control input[type="range"] {
+  transform: rotate(-90deg);
+  width: 150px;
+  background-color: #d3d3d3;
+}
+
+.dialogue-group {
+  position: relative;
+  margin: 1em 0;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s;
+  width: 100%;
+  color: #FDFFE6; /* Change text color */
+}
+
+.dialogue-group:hover {
+  background-color: #424240; /* Change background color */
+}
+
+.dialogue-group.clicked .vertical-line {
+  display: none;
+}
+
+.vertical-line {
+  width: 5px;
+  height: 100%;
+  background-color: yellow;
+  margin-right: 10px;
+}
+
+.logo {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: auto;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .texte-container {
+    width: 90vw;
+    height: 75vh;
+    font-size: 4vw;
+  }
+
+  .chapter-title {
+    font-size: 3em;
+  }
+
+  .chapter-subtitle {
+    font-size: 1.5em;
+  }
+
+  .main-title {
+    font-size: 1.5em;
+  }
+
+  .subtitle {
+    font-size: 0.8em;
+  }
+}

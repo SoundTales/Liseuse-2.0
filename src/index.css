@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Literata:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lulo+Clean:wght@400&display=swap'); /* Add Lulo Clean font */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #424240; /* Change background color */
+  font-family: 'Literata', serif;
+  color: #FDFFE6; /* Change text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body.background-fade {
+  background-color: #FAF9F6; /* New background color */
+  transition: background-color 2s ease; /* Smooth transition for background color */
+}
+
+body.intro {
+  background-color: #424240;
+}
+
+.texte-container {
+  width: 75vw;
+  height: 75vh;
+  background-color: transparent;
+  font-size: 2vw;
+  text-align: justify;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  color: #FDFFE6; /* Change text color */
+}
+
+.chapter-container {
+  text-align: center;
+  animation: fadeOut 2s 3s forwards;
+  background-color: #424240;
+}
+
+.chapter-title-container {
+  text-align: center;
+  font-size: 25px;
+  text-align: justify;
+}
+
+.chapter-title {
+  font-size: 4em;
+  color: #FDFFE6; /* Change text color */
+  opacity: 0;
+  animation: fadeInUp 1s forwards; /* Reduce duration by 1s */
+  margin-bottom: 0.2em;
+  font-family: 'Lulo Clean', sans-serif; /* Ensure Lulo Clean font */
+}
+
+.chapter-subtitle {
+  font-size: 1.5em; /* Adjust font size */
+  color: #FDFFE6; /* Change text color */
+  opacity: 0;
+  animation: fadeInUp 1s forwards 1s; /* Reduce duration by 1s */
+  margin-top: 0.1em; /* Adjust margin */
+  font-family: 'Literata', serif; /* Ensure Literata Regular */
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.click-to-start {
+  text-align: center;
+  color: #FDFFE6; /* Change text color */
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.main-title {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  color: #FDFFE6; /* Change text color */
+}
+
+.subtitle {
+  font-size: 1em;
+  margin-bottom: 2em;
+  color: #FDFFE6; /* Change text color */
+}
+
+.volume-control {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+}
+
+.volume-control input[type="range"] {
+  transform: rotate(-90deg);
+  width: 150px;
+  background-color: #d3d3d3;
+}
+
+.dialogue-group {
+  position: relative;
+  margin: 1em 0;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s;
+  width: 100%;
+  color: #232322; /* Change text color */
+}
+
+.dialogue-group:hover {
+  background-color: #FAF9F6; /* Change background color */
+}
+
+.dialogue-group.clicked .vertical-line {
+  display: none;
+}
+
+.vertical-line {
+  width: 5px;
+  height: 100%;
+  background-color: yellow;
+  margin-right: 10px;
+}
+
+.logo {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: auto;
+}
+
+.centered-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: auto;
+  opacity: 0;
+}
+
+.bottom-right-logo {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 100px;
+  height: auto;
+  animation: moveBottomRight 1s forwards 1s;
+}
+
+.fixed-logo {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 100px;
+  height: auto;
+}
+
+.animate-logo {
+  animation: fadeInScale 2s forwards, holdScale 1s forwards 3s, fadeOutScale 2s forwards 4s;
+}
+
+.fade-in {
+  animation: fadeIn 2s forwards;
+}
+
+.fadeInText {
+  animation: fadeInText 2s forwards;
+}
+
+.osrase-text {
+  font-family: 'Lulo Clean', sans-serif; /* Ensure Lulo Clean font */
+  color: #F5FF85; /* Change color */
+  font-size: 4em;
+  text-align: center;
+  text-transform: uppercase; /* Ensure uppercase */
+}
+
+.sound-tales-text {
+  font-family: 'Literata', serif; /* Ensure Literata Regular */
+  color: #FDFFE6; /* Change text color */
+  font-size: 2em;
+  text-align: center;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chapter-text {
+  color: #424240;
+  overflow-y: scroll;
+  margin: 0 1.2cm;
+  height: calc(100vh - 2.4cm);
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  -ms-overflow-style: none;  /* Hide scrollbar in IE/Edge */
+}
+
+.chapter-text::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
+}
+
+.navigation-bar {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(66, 66, 64, 0.9); /* Semi-transparent background */
+  padding: 10px 0;
+}
+
+.nav-button {
+  background-color: #424240;
+  color: #FDFFE6;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  flex: 1;
+  text-align: center;
+}
+
+.nav-button:hover {
+  background-color: #232322;
+}
+
+.fullscreen-toggle {
+  top: 10px;
+  right: 10px;
+  width: 1cm;
+  height: 1cm;
+  cursor: pointer;
+  position: fixed;
+  z-index: 1000;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes holdScale {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes fadeOutScale {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+
+@keyframes moveBottomRight {
+  from {
+    transform: translate(-50%, -50%);
+  }
+  to {
+    transform: translate(0, 0);
+    bottom: 10px;
+    right: 10px;
+    width: 100px;
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .texte-container {
+    width: 90vw;
+    height: 75vh;
+    font-size: 4vw;
+  }
+
+  .chapter-title {
+    font-size: 3em;
+  }
+
+  .chapter-subtitle {
+    font-size: 1.5em;
+  }
+
+  .main-title {
+    font-size: 1.5em;
+  }
+
+  .subtitle {
+    font-size: 0.8em;
+  }
+}
